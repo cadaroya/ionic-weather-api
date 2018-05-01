@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="home">
+  <ion-grid *ngIf="weather">
+    <ion-row>
+      <ion-col width-50 offset-25>
+        <h2 class = "location"> {{ weather.display_location.full}}</h2>
+        <div class="icon"> <img src="{{weather.con_url}}" alt=""></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
