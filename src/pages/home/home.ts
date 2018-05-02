@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { WeatherProvider} from '../../providers/weather/weather';
+import { ReadingProvider} from '../../providers/reading/reading';
 
 @Component({
   selector: 'page-home',
@@ -12,7 +12,7 @@ export class HomePage {
     city:string,
     state:string
   }
-  constructor(public navCtrl: NavController, private weatherProvider:WeatherProvider) {
+  constructor(public navCtrl: NavController, private readingProvider:ReadingProvider) {
 
   }
 
@@ -22,13 +22,7 @@ export class HomePage {
       state: 'FL'
     }
 
-    this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe((weather: Weather) => {
-      this.weather = weather.current_observation;
-    });
+    this.readingProvider.getReading().subscribe((data) => console.log(data));
   }
 
-}
-
-class Weather {
-  current_observation: string;
 }

@@ -12,7 +12,7 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { WeatherProvider } from '../providers/weather/weather';
+import { ReadingProvider } from '../providers/reading/reading';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { WeatherProvider } from '../providers/weather/weather';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WeatherProvider
+    ReadingProvider
   ]
 })
 export class AppModule {}
